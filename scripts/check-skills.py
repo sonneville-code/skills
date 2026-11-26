@@ -10,7 +10,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SKILL_DIRS = [ROOT / "skills", ROOT / "adhd" / "skills"]
+SKILL_DIRS = [ROOT / "skills", ROOT / "adhd" / "skills", ROOT / "genui" / "skills"]
 FRONT = re.compile(r"\A---\r?\n(.*?)\r?\n---", re.S)
 KEY = re.compile(r"^([A-Za-z][\w-]*):\s*(.*)$")
 errors = []
@@ -87,7 +87,7 @@ for entry in market["plugins"]:
         fail(entry["name"], "plugin.json and marketplace.json versions differ")
 
 versions = {}
-for manifest in ["package.json"] + [f"{d}/.{k}-plugin/plugin.json" for d in (".", "adhd") for k in ("claude", "codex", "cursor", "antigravity")]:
+for manifest in ["package.json"] + [f"{d}/.{k}-plugin/plugin.json" for d in (".", "adhd", "genui") for k in ("claude", "codex", "cursor", "antigravity")]:
     path = ROOT / manifest
     if not path.exists():
         fail(manifest, "missing manifest")

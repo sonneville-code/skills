@@ -17,6 +17,11 @@
       "name": "momentum-adhd",
       "source": "adhd",
       "description": "Optional add-on for ADHD readers: action-first replies, a first step for a stuck start, a scope guard against tool loops, and an opt-in session hook."
+    },
+    {
+      "name": "momentum-genui",
+      "source": "genui",
+      "description": "Optional add-on for Paseo users: the genui skill, so agents answer with Paseo inline UI blocks (tables, plans, forms, results) that render correctly."
     }
   ]
 }

@@ -4,31 +4,38 @@ Agent skills that keep work moving: one goal, a way to check it, evidence before
 
 The name comes from one idea: keep moving forward, not aiming for perfection. Small, verified wins build speed, and speed gets real work finished.
 
-momentum ships as two plugins for Claude Code, Codex, Cursor, Antigravity, Hermes and OpenCode, and as plain Agent Skills (`SKILL.md` folders) for every other harness.
+momentum ships as three plugins for Claude Code, Codex, Cursor, Antigravity, Hermes and OpenCode, and as plain Agent Skills (`SKILL.md` folders) for every other harness.
 
-| Plugin | For | Skills |
+| Plugin | For | What it adds |
 |---|---|---|
 | `momentum` | Anyone | 17 skills for building, debugging, verifying, delegating and writing, plus the `momentum-worker` subagent |
-| `momentum-adhd` | Optional add-on for ADHD readers, or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook (Claude Code only) |
+| `momentum-adhd` | Optional, for ADHD readers or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook (Claude Code) |
+| `momentum-genui` | Optional, for [Paseo](https://paseo.sh) users | `genui`, so agents answer with Paseo inline UI blocks that render correctly |
 
-The core plugin works alone. Without the add-on, nothing in it shapes your replies or interrupts tool setup.
+The core plugin works alone. Install an add-on only if you want it.
 
 ## Install
+
+Run these in your terminal. The optional lines can be skipped.
 
 ### Claude Code
 
 ```bash
-/plugin marketplace add sonneville-code/skills
-/plugin install momentum@sonneville-code
-/plugin install momentum-adhd@sonneville-code    # optional add-on
+claude plugin marketplace add sonneville-code/skills
+claude plugin install momentum@sonneville-code
+claude plugin install momentum-adhd@sonneville-code     # optional
+claude plugin install momentum-genui@sonneville-code    # optional
 ```
+
+Restart Claude Code to load them.
 
 ### Codex
 
 ```bash
 codex plugin marketplace add sonneville-code/skills
 codex plugin add momentum@sonneville-code
-codex plugin add momentum-adhd@sonneville-code   # optional add-on
+codex plugin add momentum-adhd@sonneville-code          # optional
+codex plugin add momentum-genui@sonneville-code         # optional
 ```
 
 ### Cursor
@@ -37,13 +44,14 @@ codex plugin add momentum-adhd@sonneville-code   # optional add-on
 cursor-agent plugin marketplace add https://github.com/sonneville-code/skills
 ```
 
-Then install `momentum`, and optionally `momentum-adhd`, from the marketplace panel in Cursor.
+Then install `momentum`, and any add-on you want, from the marketplace panel in Cursor.
 
 ### Antigravity
 
 ```bash
 agy plugin install https://github.com/sonneville-code/skills
-agy plugin install https://github.com/sonneville-code/skills/tree/main/adhd   # optional add-on
+agy plugin install https://github.com/sonneville-code/skills/tree/main/adhd    # optional
+agy plugin install https://github.com/sonneville-code/skills/tree/main/genui   # optional
 ```
 
 ### Hermes Agent
@@ -52,7 +60,7 @@ agy plugin install https://github.com/sonneville-code/skills/tree/main/adhd   # 
 hermes plugins install sonneville-code/skills --enable
 ```
 
-For the add-on, set `MOMENTUM_ADHD=1` in the environment Hermes runs in.
+For the add-ons, set `MOMENTUM_ADHD=1` or `MOMENTUM_GENUI=1` in the environment Hermes runs in.
 
 ### OpenCode
 
@@ -64,7 +72,7 @@ Add the plugin to `opencode.json`:
 }
 ```
 
-For the add-on, set `MOMENTUM_ADHD=1` in the environment OpenCode runs in.
+For the add-ons, set `MOMENTUM_ADHD=1` or `MOMENTUM_GENUI=1` in the environment OpenCode runs in.
 
 ### Any other harness
 
@@ -72,7 +80,7 @@ For the add-on, set `MOMENTUM_ADHD=1` in the environment OpenCode runs in.
 npx skills add sonneville-code/skills
 ```
 
-Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the add-on.
+Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the ADHD add-on, and `genui` if you do not use Paseo.
 
 ### Hooks and the worker agent after `npx skills`
 

@@ -9,6 +9,7 @@ A map for agents working in this repository. The skills themselves are plain Mar
 | `skills/<name>/SKILL.md` | Core skills, one per folder. The frontmatter `name` equals the folder name. |
 | `skills/<name>/agents/openai.yaml` | Codex policy for manual-only skills. |
 | `agents/momentum-worker.md` | The worker subagent for plugin installs. Generated from `skills/momentum-setup/assets/momentum-worker.md`; the check script keeps them equal. |
+| `genui/` | The optional `momentum-genui` plugin, same layout as `adhd/`. |
 | `adhd/` | The optional `momentum-adhd` plugin: its own `skills/`, `hooks/` and manifest. |
 | `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.antigravity-plugin/` | Plugin manifests per harness. Each exists at the root (core) and in `adhd/` (add-on). |
 | `.agents/plugins/`, `.cursor-plugin/marketplace.json`, `.claude-plugin/marketplace.json` | Marketplaces that list both plugins. |

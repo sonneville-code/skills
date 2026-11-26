@@ -1,6 +1,6 @@
 {
   "name": "momentum",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
   "type": "module",
@@ -11,8 +11,9 @@
   },
   "license": "MIT",
   "files": [
-    "skills",
     "adhd/skills",
-    "index.js"
+    "genui/skills",
+    "index.js",
+    "skills"
   ]
 }
