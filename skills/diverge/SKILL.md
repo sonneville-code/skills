@@ -80,8 +80,8 @@ For the problem P:
    > `[{"text": "...", "rationale": "..."}, ...]`
 
 3. **Critical invariant.** The Agent calls must be parallel and isolated.
-   Do NOT serialize them. Do NOT pass one branch's output as context to
-   another. Branches that see each other anchor each other and the whole
+   Do NOT serialize them. Each branch starts fresh and never sees the
+   ideas of another branch. Branches that see each other anchor each other and the whole
    method collapses to a wider single thought.
 
 ### Phase 2: Focus (critic on)
@@ -197,24 +197,3 @@ These are how this skill goes wrong. Watch for them.
 5 diverge + 1 score + 1 cluster + 3 deepen ≈ 10 Agent calls per run.
 About 5 to 10x a single-shot answer. Not for every keystroke. For decision
 points where the cost of the obvious answer is high.
-
-## Companion library and CLI
-
-There is a Node/TS implementation that does the same loop with structured
-JSON parsing, score weighting, and a CLI. Use it when running outside
-Claude Code or in batch.
-
-    npm install -g adhd-agent
-    adhd "your problem here"
-
-Code, paper, evals, and contributing guide at
-https://github.com/UditAkhourii/adhd. The skill above gives you the same
-loop inside Claude with no install required.
-
-## Source spec
-
-This skill operationalises a written spec on divergent ideation. The
-original prose is preserved in `SOURCE-SPEC.md` for reference. The
-implementation choices made here (parallel isolated Agent calls,
-mechanical generator/critic split, frame-based branching) follow from
-that spec.

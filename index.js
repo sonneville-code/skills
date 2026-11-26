@@ -8,7 +8,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const root = path.dirname(fileURLToPath(import.meta.url));
 const paths = [path.join(root, "skills")];
 if (process.env.MOMENTUM_ADHD === "1") paths.push(path.join(root, "adhd", "skills"));
 

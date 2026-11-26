@@ -11,7 +11,7 @@ A map for agents working in this repository. The skills themselves are plain Mar
 | `adhd/` | The optional `momentum-adhd` plugin: its own `skills/`, `hooks/` and manifest. |
 | `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.antigravity-plugin/` | Plugin manifests per harness. Each exists at the root (core) and in `adhd/` (add-on). |
 | `.agents/plugins/`, `.cursor-plugin/marketplace.json`, `.claude-plugin/marketplace.json` | Marketplaces that list both plugins. |
-| `.hermes-plugin/`, `.opencode/`, `package.json` | Hermes and OpenCode loaders. Both add the add-on only when `MOMENTUM_ADHD=1`. |
+| `.hermes-plugin/`, `index.js`, `package.json` | Hermes and OpenCode loaders. Both add the add-on only when `MOMENTUM_ADHD=1`. |
 | `docs/` | Templates for users, such as the profile template. |
 | `scripts/check-skills.py` | The check CI runs. |
 

@@ -4,7 +4,7 @@
   "private": true,
   "description": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
   "type": "module",
-  "main": ".opencode/plugins/momentum.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/sonneville-code/skills"
@@ -13,6 +13,6 @@
   "files": [
     "skills",
     "adhd/skills",
-    ".opencode"
+    "index.js"
   ]
 }
