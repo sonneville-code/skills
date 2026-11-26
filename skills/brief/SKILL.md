@@ -28,7 +28,10 @@ Report back in this format:
   DONE: <what now works, with evidence>
   BLOCKED: <what stopped you, or "nothing">
   NEED FROM USER: <one decision or approval, or "nothing">
+Keep the report short: findings as `path:line` plus one line each, no narration of routine steps.
 ```
+
+For a well-scoped task, delegate to the `momentum-worker` agent if it is installed. It already follows this report format.
 
 Add `Read the verify skill first.` as the first line, plus the val-mode skill when the momentum-adhd add-on is installed and the agent should follow the same working style.
 

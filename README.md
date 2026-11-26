@@ -8,7 +8,7 @@ momentum ships as three plugins for Claude Code, Codex, Cursor, Antigravity, Her
 
 | Plugin | For | What it adds |
 |---|---|---|
-| `momentum` | Anyone | 17 skills for building, debugging, verifying, delegating and writing, plus the `momentum-worker` subagent |
+| `momentum` | Anyone | 22 skills for building, reviewing, debugging, verifying, delegating, pausing and writing, plus the `momentum-worker` subagent |
 | `momentum-adhd` | Optional, for ADHD readers or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook (Claude Code) |
 | `momentum-genui` | Optional, for [Paseo](https://paseo.sh) users | `genui`, so agents answer with Paseo inline UI blocks that render correctly |
 
@@ -105,11 +105,11 @@ Manual skills run only when you type their name. The rest fire on their own when
 
 | Group | Skills | What they do |
 |---|---|---|
-| Thinking | `rd-method`, `diverge`, `grill` (manual) | Pick an approach with evidence, widen a hard design decision across isolated viewpoints, pressure-test a plan |
-| Building | `build`, `tdd`, `debug`, `verify`, `micro-commits`, `create-verification-skill` (manual), `maintain-verification-skill` (manual) | A default order for real changes, test-first work, root-cause debugging, an evidence gate before "done", small commits, a project-local skill that proves behavior on the real app |
-| Agents | `brief`, `review-window` (manual) | Brief and hand off agents so they finish without questions, then check on all of them in one batch |
+| Thinking | `rd-method`, `diverge`, `grill` (manual), `shared-language` | Pick an approach with evidence, widen a hard design decision across isolated viewpoints, pressure-test a plan, keep one word per concept in `GLOSSARY.md` |
+| Building | `build`, `tdd`, `debug`, `review`, `verify`, `micro-commits`, `create-verification-skill` (manual), `maintain-verification-skill` (manual) | A default order and a stop rule for each kind of change, test-first work, root-cause debugging, code review in both directions, an evidence gate before "done", small commits, a project-local skill that proves behavior on the real app |
+| Agents and focus | `brief`, `review-window` (manual), `catch-up`, `checkpoint` | Brief agents so they finish without questions, check on all of them at once, get a plain recap of what changed, pause and resume without losing the thread |
 | Writing | `unslop` | Cut AI tells from docs, commits, PR text and messages |
-| Housekeeping | `archive-audit`, `routing-tune` (manual), `momentum-setup` (manual), `momentum` (manual router) | A wrap-up audit of what is still open, a fix for skills that fire wrong, a setup for hooks and the worker agent, and a router that names the right skill |
+| Housekeeping | `archive-audit`, `learn` (manual), `routing-tune` (manual), `momentum-setup` (manual), `momentum` (manual router) | A wrap-up audit, turn repeated corrections into checks, fix skills that fire wrong, add hooks and the worker agent after `npx skills`, and a router that names the right skill |
 
 Not sure which one fits? Type `/momentum`.
 

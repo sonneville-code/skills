@@ -7,6 +7,19 @@ description: Engineering workflow for code changes larger than a one-line fix. U
 
 The steps are a default order, not a gate. Skip a step that does not fit the change and say so in one line. Each step points at a small skill that also works alone.
 
+## Pick the shape first
+
+Name which shape the request is. Each one changes where you stop.
+
+| Shape | Rule | Stop when |
+|---|---|---|
+| Feature | Write the acceptance checks and the non-goals first. Leave out modes, settings and polish the checks do not need. | The acceptance checks pass. |
+| Bug fix | Reproduce first (`debug`). Change the narrowest layer that owns the wrong behavior. No cleanup outside the fix. | The failure is gone and a regression check passes. |
+| Refactor | Set the behavior that must not change and the check that proves it, before any edit. No feature changes mixed in. Keep each step buildable. | The same check passes after as before. |
+| Migration | Map readers, writers and data shape. Plan forward and rollback. Expand, migrate, verify, then contract. Destructive steps need separate approval. | The requested stage passes. Never run a later destructive step on your own. |
+| Investigation | No product edits. Separate what you saw from what you guess. Rank causes by evidence and by how cheaply each can be ruled out. | One cause explains the evidence, or you can name the exact blocker. |
+| Verify only | Turn the acceptance into the smallest set of checks. Do not fix, polish or add tests unless asked. | The checks have run. Report pass, fail, unavailable or blocked for each. |
+
 ## Steps
 
 1. **Goal and check.** Restate the goal, the smallest change that meets it, and how anyone will know it is done, in three lines. A new tool or product passes `scope-guard` first when the momentum-adhd add-on is installed.
@@ -15,7 +28,7 @@ The steps are a default order, not a gate. Skip a step that does not fit the cha
 4. **Cut into verifiable units.** Each unit is one action that ends in a check: a test, a command, a screenshot. Order them so each check proves the next can start. Keep the units in your progress tool, not in a plan document. Work that spans sessions gets a written spec and a list of tickets in your tracker.
 5. **Execute unit by unit.** Test-first where a cheap seam exists (`tdd`). A failure goes to `debug`. Independent units with disjoint files can go to subagents (`brief`): one git worktree per parallel code agent, the same verify command for all.
 6. **Commit each verified unit** (`micro-commits`). Messages follow `unslop`.
-7. **Finish.** Run `verify` on the whole change against the request, line by line, on the real app. Report what now works with evidence, the principles that changed a decision, and open decisions. Merge, push and PR wait for the user's go unless it was already given.
+7. **Finish.** For a change larger than a small fix, run `review` on the diff first. Then run `verify` on the whole change against the request, line by line, on the real app. Report what now works with evidence, the principles that changed a decision, and open decisions. Merge, push and PR wait for the user's go unless it was already given.
 
 Done when every unit passed its check, the request is verified on the real artifact, and the report is sent.
 

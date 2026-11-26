@@ -2,6 +2,22 @@
 
 All notable changes to this project are recorded here. The format follows Keep a Changelog, and versions follow semantic versioning.
 
+## [0.4.0] - 2026-11-26
+
+### Added
+
+- `catch-up`: a plain-language recap of what changed and what waits on the user.
+- `checkpoint`: pause with a resume note, resume without redoing work, hand off to another agent.
+- `review`: give a two-axis review with proven findings, or take a review without guessing.
+- `learn`: turn a correction given twice into architecture, a check or a test before text.
+- `shared-language`: keep `GLOSSARY.md` and short ADRs.
+
+### Changed
+
+- `build` names the shape of a request first (feature, bug fix, refactor, migration, investigation, verify only) with a stop rule for each.
+- `micro-commits` writes Conventional Commits messages when the repo has no style of its own.
+- `brief` asks for short reports and points at the `momentum-worker` agent.
+
 ## [0.3.0] - 2026-11-26
 
 ### Added

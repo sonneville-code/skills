@@ -2,7 +2,7 @@
   "name": "momentum",
   "displayName": "Momentum",
   "description": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "sonneville-code",
     "url": "https://github.com/sonneville-code"

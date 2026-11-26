@@ -2,7 +2,7 @@
   "name": "momentum-genui",
   "displayName": "Momentum GenUI",
   "description": "Optional add-on for Paseo users: the genui skill, so agents answer with Paseo inline UI blocks (tables, plans, forms, results) that render correctly.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "sonneville-code",
     "url": "https://github.com/sonneville-code"
