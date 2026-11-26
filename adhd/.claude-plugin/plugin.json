@@ -2,9 +2,18 @@
   "name": "containment-adhd",
   "version": "0.1.0",
   "description": "Optional add-on for ADHD readers: action-first replies, a first step for a stuck start, a scope guard against tool loops, and an opt-in session hook.",
-  "author": { "name": "valsonnev", "url": "https://github.com/sonneville-code" },
-  "homepage": "https://github.com/sonneville-code/containment",
-  "repository": "https://github.com/sonneville-code/containment",
+  "author": {
+    "name": "sonneville-code",
+    "url": "https://github.com/sonneville-code"
+  },
+  "homepage": "https://github.com/sonneville-code/skills",
+  "repository": "https://github.com/sonneville-code/skills",
   "license": "MIT",
-  "keywords": ["skills", "adhd", "focus", "executive-function", "output-style"]
+  "keywords": [
+    "skills",
+    "adhd",
+    "focus",
+    "executive-function",
+    "output-style"
+  ]
 }

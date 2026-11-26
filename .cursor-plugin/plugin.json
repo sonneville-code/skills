@@ -1,0 +1,22 @@
+{
+  "name": "containment",
+  "displayName": "Containment",
+  "description": "Agent skills that keep work contained: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
+  "version": "0.1.0",
+  "author": {
+    "name": "sonneville-code",
+    "url": "https://github.com/sonneville-code"
+  },
+  "homepage": "https://github.com/sonneville-code/skills",
+  "repository": "https://github.com/sonneville-code/skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflow",
+    "tdd",
+    "debugging",
+    "verification",
+    "delegation"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "sonneville-code",
+  "interface": {
+    "displayName": "sonneville-code"
+  },
+  "plugins": [
+    {
+      "name": "containment",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "containment-adhd",
+      "source": {
+        "source": "local",
+        "path": "./adhd"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

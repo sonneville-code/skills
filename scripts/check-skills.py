@@ -86,6 +86,19 @@ for entry in market["plugins"]:
     if plugin["version"] != entry.get("version"):
         fail(entry["name"], "plugin.json and marketplace.json versions differ")
 
+versions = {}
+for manifest in ["package.json"] + [f"{d}/.{k}-plugin/plugin.json" for d in (".", "adhd") for k in ("claude", "codex", "cursor", "antigravity")]:
+    path = ROOT / manifest
+    if not path.exists():
+        fail(manifest, "missing manifest")
+        continue
+    versions[manifest] = json.loads(path.read_text())["version"]
+hermes = ROOT / ".hermes-plugin/plugin.yaml"
+match = re.search(r"^version:\s*(\S+)", hermes.read_text(), re.M) if hermes.exists() else None
+versions[".hermes-plugin/plugin.yaml"] = match.group(1) if match else None
+if len(set(versions.values())) > 1:
+    fail("versions", ", ".join(f"{k}={v}" for k, v in versions.items()))
+
 skip = {".git", "node_modules", "__pycache__"}
 for path in ROOT.rglob("*"):
     if not path.is_file() or path.is_symlink() or skip & set(path.parts):

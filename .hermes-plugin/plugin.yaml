@@ -1,0 +1,4 @@
+name: containment
+version: 0.1.0
+description: Agent skills that keep work contained. Set CONTAINMENT_ADHD=1 to add the ADHD add-on skills.
+author: sonneville-code

@@ -4,32 +4,79 @@ Agent skills that keep work contained: one goal, a way to check it, evidence bef
 
 The name comes from one rule: containment over completion. A stopped task with a checkpoint note beats twelve half-started loops.
 
-containment ships as two Claude Code plugins in one marketplace, and as plain Agent Skills (`SKILL.md` folders) for any harness that reads that format.
+containment ships as two plugins for Claude Code, Codex, Cursor, Antigravity, Hermes and OpenCode, and as plain Agent Skills (`SKILL.md` folders) for every other harness.
 
 | Plugin | For | Skills |
 |---|---|---|
-| `containment` | Anyone | 17 skills for building, debugging, verifying, delegating and writing |
-| `containment-adhd` | Optional add-on for ADHD readers, or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook |
+| `containment` | Anyone | 16 skills for building, debugging, verifying, delegating and writing |
+| `containment-adhd` | Optional add-on for ADHD readers, or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook (Claude Code only) |
 
 The core plugin works alone. Without the add-on, nothing in it shapes your replies or interrupts tool setup.
 
 ## Install
 
-Claude Code:
+### Claude Code
 
 ```bash
-/plugin marketplace add sonneville-code/containment
-/plugin install containment@containment
-/plugin install containment-adhd@containment    # optional add-on
+/plugin marketplace add sonneville-code/skills
+/plugin install containment@sonneville-code
+/plugin install containment-adhd@sonneville-code    # optional add-on
 ```
 
-Codex, Cursor, Copilot, Gemini CLI, OpenCode and other harnesses, through the `skills` CLI:
+### Codex
 
 ```bash
-npx skills add sonneville-code/containment
+codex plugin marketplace add sonneville-code/skills
+codex plugin add containment@sonneville-code
+codex plugin add containment-adhd@sonneville-code   # optional add-on
+```
+
+### Cursor
+
+```bash
+cursor-agent plugin marketplace add https://github.com/sonneville-code/skills
+```
+
+Then install `containment`, and optionally `containment-adhd`, from the marketplace panel in Cursor.
+
+### Antigravity
+
+```bash
+agy plugin install https://github.com/sonneville-code/skills
+agy plugin install https://github.com/sonneville-code/skills/tree/main/adhd   # optional add-on
+```
+
+### Hermes Agent
+
+```bash
+hermes plugins install sonneville-code/skills --enable
+```
+
+For the add-on, set `CONTAINMENT_ADHD=1` in the environment Hermes runs in.
+
+### OpenCode
+
+Add the plugin to `opencode.json`:
+
+```json
+{
+  "plugin": ["containment@git+https://github.com/sonneville-code/skills.git"]
+}
+```
+
+For the add-on, set `CONTAINMENT_ADHD=1` in the environment OpenCode runs in.
+
+### Any other harness
+
+```bash
+npx skills add sonneville-code/skills
 ```
 
 Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the add-on.
+
+### Name clashes
+
+Claude Code, Codex and Cursor prefix plugin skills with the plugin name (`containment:verify`). Antigravity, Hermes, OpenCode and the `skills` CLI do not. If you already have a skill with the same name, such as your own `verify`, one of the two wins. Rename or remove one of them.
 
 ## Core skills
 
