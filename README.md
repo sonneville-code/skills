@@ -8,7 +8,7 @@ momentum ships as two plugins for Claude Code, Codex, Cursor, Antigravity, Herme
 
 | Plugin | For | Skills |
 |---|---|---|
-| `momentum` | Anyone | 16 skills for building, debugging, verifying, delegating and writing |
+| `momentum` | Anyone | 17 skills for building, debugging, verifying, delegating and writing, plus the `momentum-worker` subagent |
 | `momentum-adhd` | Optional add-on for ADHD readers, or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook (Claude Code only) |
 
 The core plugin works alone. Without the add-on, nothing in it shapes your replies or interrupts tool setup.
@@ -74,6 +74,19 @@ npx skills add sonneville-code/skills
 
 Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the add-on.
 
+### Hooks and the worker agent after `npx skills`
+
+The `skills` CLI copies skill folders and nothing else, so it cannot add hooks or subagents. Run `/momentum-setup` once in each harness after the install. It asks what to add (the `val-mode` session hook, the `momentum-worker` subagent, or both), shows the files it will touch, and writes them only after you approve. `/momentum-setup uninstall` removes only what it added.
+
+| Harness | Session hook | Worker agent |
+|---|---|---|
+| Claude Code | yes | yes |
+| Codex | yes (trust it once on the Hooks screen) | yes |
+| Cursor | yes | yes |
+| Antigravity | yes | through `agy plugin install` |
+| OpenCode | yes | yes |
+| Hermes | yes | no, Hermes has no agent files |
+
 ### Name clashes
 
 Claude Code, Codex and Cursor prefix plugin skills with the plugin name (`momentum:verify`). Antigravity, Hermes, OpenCode and the `skills` CLI do not. If you already have a skill with the same name, such as your own `verify`, one of the two wins. Rename or remove one of them.
@@ -88,7 +101,7 @@ Manual skills run only when you type their name. The rest fire on their own when
 | Building | `build`, `tdd`, `debug`, `verify`, `micro-commits`, `create-verification-skill` (manual), `maintain-verification-skill` (manual) | A default order for real changes, test-first work, root-cause debugging, an evidence gate before "done", small commits, a project-local skill that proves behavior on the real app |
 | Agents | `brief`, `review-window` (manual) | Brief and hand off agents so they finish without questions, then check on all of them in one batch |
 | Writing | `unslop` | Cut AI tells from docs, commits, PR text and messages |
-| Housekeeping | `archive-audit`, `routing-tune` (manual), `momentum` (manual router) | A wrap-up audit of what is still open, a fix for skills that fire wrong, and a router that names the right skill |
+| Housekeeping | `archive-audit`, `routing-tune` (manual), `momentum-setup` (manual), `momentum` (manual router) | A wrap-up audit of what is still open, a fix for skills that fire wrong, a setup for hooks and the worker agent, and a router that names the right skill |
 
 Not sure which one fits? Type `/momentum`.
 

@@ -27,3 +27,5 @@ Answer with the one skill that fits, then run it. When two fit, run them in the 
 | Writing that leaves the chat | `unslop` |
 | End of session, "anything left?" | `archive-audit` |
 | Routing miss, wrong skill fired | `routing-tune` |
+| Add the session hook or worker agent after `npx skills` | `/momentum-setup` |
+| Hand a scoped task to a subagent | the `momentum-worker` agent, briefed with `brief` |

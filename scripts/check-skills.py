@@ -99,6 +99,11 @@ versions[".hermes-plugin/plugin.yaml"] = match.group(1) if match else None
 if len(set(versions.values())) > 1:
     fail("versions", ", ".join(f"{k}={v}" for k, v in versions.items()))
 
+asset = (ROOT / "skills/momentum-setup/assets/momentum-worker.md").read_text()
+plugin_agent = ROOT / "agents/momentum-worker.md"
+if not plugin_agent.exists() or not plugin_agent.read_text().endswith(asset):
+    fail("agents/momentum-worker.md", "must end with skills/momentum-setup/assets/momentum-worker.md; regenerate it")
+
 skip = {".git", "node_modules", "__pycache__"}
 for path in ROOT.rglob("*"):
     if not path.is_file() or path.is_symlink() or skip & set(path.parts):

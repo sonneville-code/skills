@@ -1,0 +1,3 @@
+# Written by scripts/codex-policy.py from disable-model-invocation in SKILL.md. Do not edit.
+policy:
+  allow_implicit_invocation: false

@@ -2,6 +2,13 @@
 
 All notable changes to this project are recorded here. The format follows Keep a Changelog, and versions follow semantic versioning.
 
+## [0.2.0] - 2026-11-26
+
+### Added
+
+- `momentum-setup` skill: installs the `val-mode` session hook and the `momentum-worker` subagent for Claude Code, Codex, Cursor, Antigravity, OpenCode and Hermes after an `npx skills` install, with dry run and uninstall.
+- `momentum-worker` subagent, shipped in the core plugin.
+
 ## [0.1.0] - 2026-11-26
 
 First release.
