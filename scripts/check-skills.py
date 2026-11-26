@@ -110,7 +110,7 @@ for path in ROOT.rglob("*"):
     except (UnicodeDecodeError, OSError):
         continue
     if re.search(r"/home/\w+|/Users/\w+", text):
-        fail(path.relative_to(ROOT).as_posix(), "contains an absolute home path")
+        fail(path.relative_to(ROOT).as_posix(), "holds an absolute home path")
 
 if errors:
     print("\n".join(errors))

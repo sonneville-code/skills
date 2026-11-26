@@ -1,7 +1,7 @@
 {
-  "name": "containment",
+  "name": "momentum",
   "version": "0.1.0",
-  "description": "Agent skills that keep work contained: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
+  "description": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
   "author": {
     "name": "sonneville-code",
     "url": "https://github.com/sonneville-code"
@@ -19,9 +19,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Containment",
-    "shortDescription": "Agent skills that keep work contained",
-    "longDescription": "Agent skills that keep work contained: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
+    "displayName": "Momentum",
+    "shortDescription": "Agent skills that keep work moving",
+    "longDescription": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
     "developerName": "sonneville-code",
     "category": "Developer Tools",
     "capabilities": [

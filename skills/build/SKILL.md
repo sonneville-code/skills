@@ -9,7 +9,7 @@ The steps are a default order, not a gate. Skip a step that does not fit the cha
 
 ## Steps
 
-1. **Goal and check.** Restate the goal, the smallest change that meets it, and how anyone will know it is done, in three lines. A new tool or product passes `scope-guard` first when the containment-adhd add-on is installed.
+1. **Goal and check.** Restate the goal, the smallest change that meets it, and how anyone will know it is done, in three lines. A new tool or product passes `scope-guard` first when the momentum-adhd add-on is installed.
 2. **Know before you design.** Trace the affected code. Use the terms in `GLOSSARY.md` and respect ADRs. Ask only what changes the design: one batched question, or `grill` when decisions depend on each other.
 3. **Name the data shape first.** Core types, state, and who writes what (Foundational Thinking, Model the Domain). A module boundary in question: prefer a few deep modules with simple interfaces over many shallow ones.
 4. **Cut into verifiable units.** Each unit is one action that ends in a check: a test, a command, a screenshot. Order them so each check proves the next can start. Keep the units in your progress tool, not in a plan document. Work that spans sessions gets a written spec and a list of tickets in your tracker.
@@ -51,7 +51,7 @@ Done when every unit passed its check, the request is verified on the real artif
 - **Explain the Number.** Find what limits a measured number before trusting it.
 
 **Delegation**
-- **Guard the Context Window.** Route bulk output to subagents or containment. Keep summaries in the main thread.
+- **Guard the Context Window.** Route bulk output to subagents or momentum. Keep summaries in the main thread.
 - **Never Block on the Human.** Proceed on reversible work and present the result. Confirm only irreversible steps.
 
 **Meta**

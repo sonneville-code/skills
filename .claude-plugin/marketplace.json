@@ -1,19 +1,19 @@
 {
   "name": "sonneville-code",
-  "description": "Agent skills that keep work contained, with an optional add-on for ADHD readers.",
+  "description": "Agent skills that keep work moving, with an optional add-on for ADHD readers.",
   "owner": {
     "name": "sonneville-code",
     "url": "https://github.com/sonneville-code"
   },
   "plugins": [
     {
-      "name": "containment",
+      "name": "momentum",
       "source": "./",
-      "description": "Agent skills that keep work contained: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
+      "description": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
       "version": "0.1.0"
     },
     {
-      "name": "containment-adhd",
+      "name": "momentum-adhd",
       "source": "./adhd",
       "description": "Optional add-on for ADHD readers: action-first replies, a first step for a stuck start, a scope guard against tool loops, and an opt-in session hook.",
       "version": "0.1.0"

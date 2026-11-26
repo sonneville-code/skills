@@ -8,7 +8,7 @@ First release.
 
 ### Added
 
-- `containment` plugin: `rd-method`, `diverge`, `grill`, `build`, `tdd`, `debug`, `verify`, `micro-commits`, `create-verification-skill`, `maintain-verification-skill`, `brief`, `review-window`, `unslop`, `archive-audit`, `routing-tune`, and the `containment` router.
-- `containment-adhd` add-on plugin: `val-mode`, `first-step`, `scope-guard`, and an opt-in SessionStart hook that loads `val-mode`.
+- `momentum` plugin: `rd-method`, `diverge`, `grill`, `build`, `tdd`, `debug`, `verify`, `micro-commits`, `create-verification-skill`, `maintain-verification-skill`, `brief`, `review-window`, `unslop`, `archive-audit`, `routing-tune`, and the `momentum` router.
+- `momentum-adhd` add-on plugin: `val-mode`, `first-step`, `scope-guard`, and an opt-in SessionStart hook that loads `val-mode`.
 - Install manifests for Claude Code, Codex, Cursor, Antigravity, Hermes and OpenCode.
 - A profile template for personal settings, and `scripts/check-skills.py` with a CI workflow.

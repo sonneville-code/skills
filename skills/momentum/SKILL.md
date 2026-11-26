@@ -1,12 +1,12 @@
 ---
-name: containment
-description: Router for the containment skill pack. Names which skill fits the situation. /containment.
+name: momentum
+description: Router for the momentum skill pack. Names which skill fits the situation. /momentum.
 disable-model-invocation: true
 ---
 
-# containment router
+# momentum router
 
-Answer with the one skill that fits, then run it. When two fit, run them in the order shown. Skills marked (add-on) come from the optional `containment-adhd` plugin. When it is not installed, skip them and use the next row that fits.
+Answer with the one skill that fits, then run it. When two fit, run them in the order shown. Skills marked (add-on) come from the optional `momentum-adhd` plugin. When it is not installed, skip them and use the next row that fits.
 
 | Situation | Skill |
 |---|---|

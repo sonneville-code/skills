@@ -1,10 +1,10 @@
 {
-  "name": "containment",
+  "name": "momentum",
   "version": "0.1.0",
   "private": true,
-  "description": "Agent skills that keep work contained: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
+  "description": "Agent skills that keep work moving: a verified build workflow, root-cause debugging, evidence before done, clean agent handoffs, and writing without AI tells.",
   "type": "module",
-  "main": ".opencode/plugins/containment.js",
+  "main": ".opencode/plugins/momentum.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/sonneville-code/skills"

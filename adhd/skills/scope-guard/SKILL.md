@@ -9,7 +9,7 @@ A common pattern: tool setup and new ideas crowd out the work that matters. This
 
 ## Steps
 
-1. **Read the ledger.** Local time, what is due today, and deadlines in the next 72 hours. The profile (`~/.config/containment/profile.md`) says where they live (`ledger`, `deadlines`). Without a profile, ask once where the task list is, or skip this step and say so. Done when you can say the one open item that matters most, or that nothing is due.
+1. **Read the ledger.** Local time, what is due today, and deadlines in the next 72 hours. The profile (`~/.config/momentum/profile.md`) says where they live (`ledger`, `deadlines`). Without a profile, ask once where the task list is, or skip this step and say so. Done when you can say the one open item that matters most, or that nothing is due.
 2. **Classify the request** as one of:
    - **unblock**: the current task cannot proceed without it, or a tool is broken in a way that stops work.
    - **maintenance**: scheduled upkeep with a cost if skipped (security update, expiring license, backup).

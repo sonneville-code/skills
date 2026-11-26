@@ -1,7 +1,7 @@
-"""containment plugin for Hermes Agent.
+"""momentum plugin for Hermes Agent.
 
 Registers the core skills with Hermes' skill loader. The ADHD add-on skills
-(adhd/skills) are registered only when CONTAINMENT_ADHD=1 is set.
+(adhd/skills) are registered only when MOMENTUM_ADHD=1 is set.
 No network calls, no writes, no hooks.
 """
 import os
@@ -16,11 +16,11 @@ def _skill_dirs():
         core = root / "skills"
         if (core / "verify" / "SKILL.md").is_file():
             dirs = [core]
-            if os.environ.get("CONTAINMENT_ADHD") == "1":
+            if os.environ.get("MOMENTUM_ADHD") == "1":
                 dirs.append(root / "adhd" / "skills")
             return dirs
     raise RuntimeError(
-        "containment plugin: cannot find the skills/ folder. "
+        "momentum plugin: cannot find the skills/ folder. "
         "Reinstall with `hermes plugins install sonneville-code/skills`."
     )
 

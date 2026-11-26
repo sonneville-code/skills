@@ -1,6 +1,6 @@
 # Profile template
 
-`val-mode`, `scope-guard`, `first-step` and `diverge` read a profile when one exists. Copy this file to `~/.config/containment/profile.md`, or point `CONTAINMENT_PROFILE` at it. Keep it out of any public repository: it describes you.
+`val-mode`, `scope-guard`, `first-step` and `diverge` read a profile when one exists. Copy this file to `~/.config/momentum/profile.md`, or point `MOMENTUM_PROFILE` at it. Keep it out of any public repository: it describes you.
 
 Every key is optional. A missing key means the skill asks once or skips that step.
 

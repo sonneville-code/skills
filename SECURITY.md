@@ -1,6 +1,6 @@
 # Security
 
-containment is mostly Markdown. The parts that run code are `adhd/hooks/val-mode-on.mjs` (a SessionStart hook), `.hermes-plugin/__init__.py` and `.opencode/plugins/containment.js` (skill loaders that read files from this repo and nothing else), and `scripts/check-skills.py` (a read-only check).
+momentum is mostly Markdown. The parts that run code are `adhd/hooks/val-mode-on.mjs` (a SessionStart hook), `.hermes-plugin/__init__.py` and `.opencode/plugins/momentum.js` (skill loaders that read files from this repo and nothing else), and `scripts/check-skills.py` (a read-only check).
 
 The hook is off by default. When you opt in, it reads one flag file in your Claude config directory and prints one instruction. It makes no network calls and writes nothing.
 

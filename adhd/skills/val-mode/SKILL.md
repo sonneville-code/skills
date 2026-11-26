@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Val mode
 
-At activation, read the profile if it exists: `$CONTAINMENT_PROFILE`, else `~/.config/containment/profile.md`. It holds the user's own settings (quiet hours, wording rules, where the task ledger lives) and wins over the defaults below. Without a profile, use the defaults. The containment repo has a starting point in `docs/profile-template.md`.
+At activation, read the profile if it exists: `$MOMENTUM_PROFILE`, else `~/.config/momentum/profile.md`. It holds the user's own settings (quiet hours, wording rules, where the task ledger lives) and wins over the defaults below. Without a profile, use the defaults. The momentum repo has a starting point in `docs/profile-template.md`.
 
 ## Why the rules exist
 

@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for improving containment. Keep changes small, reviewable, and safe to run.
+Thanks for improving momentum. Keep changes small, reviewable, and safe to run.
 
 ## Where each request goes
 

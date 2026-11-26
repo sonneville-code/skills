@@ -30,7 +30,7 @@ Report back in this format:
   NEED FROM USER: <one decision or approval, or "nothing">
 ```
 
-Add `Read the verify skill first.` as the first line, plus the val-mode skill when the containment-adhd add-on is installed and the agent should follow the same working style.
+Add `Read the verify skill first.` as the first line, plus the val-mode skill when the momentum-adhd add-on is installed and the agent should follow the same working style.
 
 ## After the agent reports
 

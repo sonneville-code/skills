@@ -1,6 +1,6 @@
 {
-  "name": "containment-adhd",
-  "displayName": "Containment ADHD",
+  "name": "momentum-adhd",
+  "displayName": "Momentum ADHD",
   "version": "0.1.0",
   "description": "Optional add-on for ADHD readers: action-first replies, a first step for a stuck start, a scope guard against tool loops, and an opt-in session hook.",
   "category": "Productivity",
