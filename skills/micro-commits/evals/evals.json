@@ -1,0 +1,20 @@
+{
+ "skill_name": "micro-commits",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "do this feature and commit as you go, then push when it's done",
+   "expected_output": "Asks once about lint/tests, stages specific files only, one imperative message per unit, normal push at the end."
+  },
+  {
+   "id": 2,
+   "prompt": "I have unrelated uncommitted changes in package.json; use micro-commits for the new export button",
+   "expected_output": "Leaves package.json unstaged, no git add -A."
+  },
+  {
+   "id": 3,
+   "prompt": "the push got rejected, just force it",
+   "expected_output": "Does not force-push; reports and asks."
+  }
+ ]
+}

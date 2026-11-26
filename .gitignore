@@ -1,0 +1,31 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Dependencies and caches
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/settings.local.json
+
+# Local tool state
+.serena/
+.claude-mem/
+.paseo/
+
+# Output
+/dist/
+/build/
+*.log
+.tmp/

@@ -1,0 +1,20 @@
+{
+  "skill_name": "routing-tune",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "You just fetched a library's docs with WebFetch even though find-docs exists. Run routing-tune on that miss.",
+      "expected_output": "One-line miss, cause 2 or 3, rung 1 or 2 diff, no hook written, waits for approval."
+    },
+    {
+      "id": 2,
+      "prompt": "I think parallel-web-search and firecrawl-search descriptions overlap and AGENTS.md repeats the fallback chain in a rules file. Use routing-tune to dedupe.",
+      "expected_output": "Redundancy findings (overlap, copied routing), merge/pointer proposal with what is lost, no deletion applied without approval."
+    },
+    {
+      "id": 3,
+      "prompt": "routing-tune: make my setup better in general.",
+      "expected_output": "Gate: no concrete evidence, so it stops or asks for a specific miss/overlap instead of auditing everything."
+    }
+  ]
+}

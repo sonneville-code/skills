@@ -1,0 +1,80 @@
+# containment
+
+Agent skills that keep work contained: one goal, a way to check it, evidence before "done", and agents that come back with a report you can read in ten seconds.
+
+The name comes from one rule: containment over completion. A stopped task with a checkpoint note beats twelve half-started loops.
+
+containment ships as two Claude Code plugins in one marketplace, and as plain Agent Skills (`SKILL.md` folders) for any harness that reads that format.
+
+| Plugin | For | Skills |
+|---|---|---|
+| `containment` | Anyone | 17 skills for building, debugging, verifying, delegating and writing |
+| `containment-adhd` | Optional add-on for ADHD readers, or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook |
+
+The core plugin works alone. Without the add-on, nothing in it shapes your replies or interrupts tool setup.
+
+## Install
+
+Claude Code:
+
+```bash
+/plugin marketplace add sonneville-code/containment
+/plugin install containment@containment
+/plugin install containment-adhd@containment    # optional add-on
+```
+
+Codex, Cursor, Copilot, Gemini CLI, OpenCode and other harnesses, through the `skills` CLI:
+
+```bash
+npx skills add sonneville-code/containment
+```
+
+Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the add-on.
+
+## Core skills
+
+Manual skills run only when you type their name. The rest fire on their own when the situation matches their description.
+
+| Group | Skills | What they do |
+|---|---|---|
+| Thinking | `rd-method`, `diverge`, `grill` (manual) | Pick an approach with evidence, widen a hard design decision across isolated viewpoints, pressure-test a plan |
+| Building | `build`, `tdd`, `debug`, `verify`, `micro-commits`, `create-verification-skill` (manual), `maintain-verification-skill` (manual) | A default order for real changes, test-first work, root-cause debugging, an evidence gate before "done", small commits, a project-local skill that proves behavior on the real app |
+| Agents | `brief`, `review-window` (manual) | Brief and hand off agents so they finish without questions, then check on all of them in one batch |
+| Writing | `unslop` | Cut AI tells from docs, commits, PR text and messages |
+| Housekeeping | `archive-audit`, `routing-tune` (manual), `containment` (manual router) | A wrap-up audit of what is still open, a fix for skills that fire wrong, and a router that names the right skill |
+
+Not sure which one fits? Type `/containment`.
+
+## The ADHD add-on
+
+`val-mode` shapes every reply around five facts about an ADHD reader: working memory is small, knowing is not doing, starting is the hardest step, vague time estimates all feel the same, and visible progress matters. It leads with the next action, numbers steps, restates state, and ends with one thing you can do in two minutes. `/val-mode terse` also compresses the prose and keeps every command, number and error exact.
+
+`first-step` turns a stuck task into one physical action under two minutes. `scope-guard` fires when a request starts tool setup or a new idea, says what is due, and offers park, time-box or do it now. It never blocks.
+
+### Your own profile
+
+The add-on reads an optional profile at `~/.config/containment/profile.md` (or the path in `CONTAINMENT_PROFILE`). It holds your quiet hours, wording preferences and where your task list lives. Start from [docs/profile-template.md](docs/profile-template.md). Keep your profile out of version control.
+
+### Session hook
+
+The add-on registers a SessionStart hook that loads `val-mode` at the start of each session. It does nothing until you opt in:
+
+```bash
+echo > ~/.claude/.containment-val-mode        # on; write "terse" in the file for terse mode
+rm ~/.claude/.containment-val-mode            # off
+CONTAINMENT_VAL_MODE=0 claude                 # off for one run
+```
+
+The hook reads one flag file, prints one instruction, and never blocks a session.
+
+## Development
+
+```bash
+python3 scripts/check-skills.py
+```
+
+The script checks that every skill's frontmatter parses, names match folders, manual skills carry their Codex policy file, versions agree across manifests, and no absolute home paths ship. CI runs it on every push. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE). A few skills include material under its own MIT license, kept next to the skill in a `LICENSE` file.

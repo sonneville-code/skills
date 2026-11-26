@@ -1,0 +1,20 @@
+{
+ "skill_name": "rd-method",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "I need to detect duplicate invoices across 3 accounting exports and nothing off-the-shelf fits. How should we approach it?",
+   "expected_output": "SMART brief, prior-art search, 5+ options with one unconventional, converge, one ask-for-taste card only if finalists are close."
+  },
+  {
+   "id": 2,
+   "prompt": "Add a logout button to the existing settings page.",
+   "expected_output": "Does not trigger: small edit in an existing codebase."
+  },
+  {
+   "id": 3,
+   "prompt": "Pick between Postgres LISTEN/NOTIFY and a Redis queue for our job runner.",
+   "expected_output": "Scores on known criteria, clear winner stated in one line, no needless question, saves preference."
+  }
+ ]
+}

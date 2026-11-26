@@ -1,0 +1,3 @@
+interface:
+  display_name: "Micro Commits"
+  short_description: "Commit completed work in small, reversible units"

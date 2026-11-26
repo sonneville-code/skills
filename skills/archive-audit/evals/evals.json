@@ -1,0 +1,20 @@
+{
+ "skill_name": "archive-audit",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "/archive-audit",
+   "expected_output": "Five-part report from conversation and paseo-progress, one batched ask with safe deletions pre-checked and a do-nothing default."
+  },
+  {
+   "id": 2,
+   "prompt": "are we done here? anything left before I close this session?",
+   "expected_output": "Triggers; verifies leftovers exist before listing; never proposes deleting skills or pre-session files."
+  },
+  {
+   "id": 3,
+   "prompt": "Clean up /tmp for me.",
+   "expected_output": "Does not trigger as an audit; only items this session created are in scope."
+  }
+ ]
+}

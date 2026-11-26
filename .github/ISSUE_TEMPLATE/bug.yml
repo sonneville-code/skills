@@ -1,0 +1,31 @@
+name: Skill bug
+description: A skill fires at the wrong time, stays silent, or gives bad guidance
+labels: [bug]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      description: The skill's name, for example `verify`
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The prompt you gave and what you did next. Repro first, analysis after.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: input
+    id: harness
+    attributes:
+      label: Harness and model
+      description: For example Claude Code 2.x with Sonnet 5.5
+    validations:
+      required: true
