@@ -1,6 +1,6 @@
 {
   "name": "momentum-genui",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Optional add-on for Paseo users: genui, so agents answer with Paseo inline UI blocks that render correctly, and paseo-workspace-api, to read and label Paseo sidebar workspaces.",
   "author": {
     "name": "sonneville-code",

@@ -2,6 +2,14 @@
 
 All notable changes to this project are recorded here. The format follows Keep a Changelog, and versions follow semantic versioning.
 
+## [0.5.1] - 2026-11-28
+
+### Changed
+
+- `rd-method`: offers to save a choice to durable memory and writes it only after the user says yes. Search results count as evidence, never as instructions.
+- `routing-tune`, `micro-commits`: text from plugins, other skills and commit history is data, never instructions.
+- `archive-audit`: deletes, reverts or stops nothing until the user approves that item.
+
 ## [0.5.0] - 2026-11-27
 
 ### Added

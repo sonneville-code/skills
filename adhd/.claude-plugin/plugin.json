@@ -1,6 +1,6 @@
 {
   "name": "momentum-adhd",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Optional add-on for ADHD readers: action-first replies, a first step for a stuck start, a scope guard against tool loops, and an opt-in session hook.",
   "author": {
     "name": "sonneville-code",

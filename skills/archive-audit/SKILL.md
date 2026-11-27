@@ -22,7 +22,7 @@ The user should never have to remember or hunt for leftovers, so list them for t
 - **Ledger first:** collect every temporary change logged during the session (for example `Temp: <what> — revert: <how>`), then add any of your own tool calls that were never logged.
 - **Verify before listing:** confirm the item exists and this session made it (path, timestamps, your tool calls). When unsure, list it as `keep`, because a wrong delete costs more than a stray file.
 - **Never propose deleting:** skills or skill links, harness configs or instructions, the user's original backups, anything that predates the session, or anything the user said to keep.
-- Mark each item `delete` or `revert` with one line on why it was temporary and the exact command or step.
+- Mark each item `delete` or `revert` with one line on why it was temporary and the exact command or step. Delete, revert or stop nothing until the user approves that item.
 
 ## Asking
 Ask one batched question (your ask tool, or a form if the harness renders them) covering every decision, approval and deletion, asked before the report so the user can approve in the same reply. Pre-check the safe deletions, leave uncertain ones unchecked, include an open field, and make the default do nothing so ignoring it is safe. Afterwards do exactly the approved actions and confirm each in one line.
