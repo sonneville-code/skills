@@ -1,8 +1,8 @@
 {
   "name": "momentum-genui",
   "displayName": "Momentum GenUI",
-  "version": "0.4.0",
-  "description": "Optional add-on for Paseo users: the genui skill, so agents answer with Paseo inline UI blocks (tables, plans, forms, results) that render correctly.",
+  "version": "0.5.0",
+  "description": "Optional add-on for Paseo users: genui, so agents answer with Paseo inline UI blocks that render correctly, and paseo-workspace-api, to read and label Paseo sidebar workspaces.",
   "category": "Developer Tools",
   "keywords": [
     "skills",

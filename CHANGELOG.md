@@ -2,6 +2,12 @@
 
 All notable changes to this project are recorded here. The format follows Keep a Changelog, and versions follow semantic versioning.
 
+## [0.5.0] - 2026-11-27
+
+### Added
+
+- `paseo-workspace-api` in the `momentum-genui` add-on: list Paseo workspaces with status and labels, and add a label to one.
+
 ## [0.4.0] - 2026-11-26
 
 ### Added

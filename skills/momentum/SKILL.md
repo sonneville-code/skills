@@ -27,6 +27,7 @@ Answer with the one skill that fits, then run it. When two fit, run them in the 
 | Check on all running agents | `/review-window` |
 | Commit as you go | `micro-commits` |
 | Replying inside Paseo with tables, plans or forms | `genui` (add-on) |
+| Find Paseo workspace IDs, status or labels, or label a workspace | `paseo-workspace-api` (add-on) |
 | Writing that leaves the chat | `unslop` |
 | Lost track, "catch me up" | `catch-up` |
 | Pause, resume, or hand off | `checkpoint` |

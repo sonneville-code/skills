@@ -10,7 +10,7 @@ momentum ships as three plugins for Claude Code, Codex, Cursor, Antigravity, Her
 |---|---|---|
 | `momentum` | Anyone | 22 skills for building, reviewing, debugging, verifying, delegating, pausing and writing, plus the `momentum-worker` subagent |
 | `momentum-adhd` | Optional, for ADHD readers or anyone who wants action-first replies | `val-mode`, `first-step`, `scope-guard`, and an opt-in session hook (Claude Code) |
-| `momentum-genui` | Optional, for [Paseo](https://paseo.sh) users | `genui`, so agents answer with Paseo inline UI blocks that render correctly |
+| `momentum-genui` | Optional, for [Paseo](https://paseo.sh) users | `genui`, so agents answer with Paseo inline UI blocks that render correctly, and `paseo-workspace-api`, to read and label Paseo sidebar workspaces |
 
 The core plugin works alone. Install an add-on only if you want it.
 
@@ -80,7 +80,7 @@ For the add-ons, set `MOMENTUM_ADHD=1` or `MOMENTUM_GENUI=1` in the environment 
 npx skills add sonneville-code/skills
 ```
 
-Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the ADHD add-on, and `genui` if you do not use Paseo.
+Pick the skills you want when prompted. Leave out `val-mode`, `first-step` and `scope-guard` if you do not want the ADHD add-on, and `genui` and `paseo-workspace-api` if you do not use Paseo.
 
 ### Hooks and the worker agent after `npx skills`
 
