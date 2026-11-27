@@ -1,15 +1,84 @@
-name: check
+name: Check
 
 on:
-  push:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   skills:
+    name: Skills, manifests and leaks
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 scripts/check-skills.py
+      - name: Check skills and manifests
+        run: python3 scripts/check-skills.py
+      - name: Syntax-check scripts
+        run: |
+          node --check index.js
+          node --check adhd/hooks/val-mode-on.mjs
+          node --check skills/momentum-setup/scripts/setup.mjs
+          node --check skills/momentum-setup/scripts/session-start.mjs
+          node --check genui/skills/paseo-workspace-api/scripts/workspaces.mjs
+          python3 -m py_compile .hermes-plugin/__init__.py
+
+  claude-code:
+    name: Plugins load in Claude Code
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Validate and install every plugin into a scratch config
+        run: |
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/claude-scratch"
+          mkdir -p "$CLAUDE_CONFIG_DIR"
+          for dir in . adhd genui; do claude plugin validate "$dir"; done
+          claude plugin marketplace add "$GITHUB_WORKSPACE"
+          for plugin in momentum momentum-adhd momentum-genui; do
+            claude plugin install "$plugin@sonneville-code"
+          done
+          claude plugin list | tee plugin-list.txt
+          enabled=$(grep -c "enabled" plugin-list.txt || true)
+          if [ "$enabled" -lt 3 ]; then
+            echo "::error::expected 3 enabled plugins, found $enabled"
+            exit 1
+          fi
+
+  codex:
+    name: Plugins install in Codex
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Codex
+        run: npm install -g @openai/codex
+      - name: Add the marketplace and install every plugin into a scratch home
+        run: |
+          export CODEX_HOME="$RUNNER_TEMP/codex-scratch"
+          mkdir -p "$CODEX_HOME"
+          codex plugin marketplace add "$GITHUB_WORKSPACE"
+          for plugin in momentum momentum-adhd momentum-genui; do
+            codex plugin add "$plugin@sonneville-code"
+          done
+          codex plugin list | tee plugin-list.txt
+          installed=$(grep -c "installed, enabled" plugin-list.txt || true)
+          if [ "$installed" -lt 3 ]; then
+            echo "::error::expected 3 installed plugins, found $installed"
+            exit 1
+          fi

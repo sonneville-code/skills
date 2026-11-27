@@ -1,5 +1,9 @@
 # momentum
 
+[![Check](https://github.com/sonneville-code/skills/actions/workflows/check.yml/badge.svg)](https://github.com/sonneville-code/skills/actions/workflows/check.yml)
+[![Release](https://img.shields.io/github/v/release/sonneville-code/skills)](https://github.com/sonneville-code/skills/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Agent skills that keep work moving: one goal, a way to check it, evidence before "done", and agents that come back with a report you can read in ten seconds.
 
 The name comes from one idea: keep moving forward, not aiming for perfection. Small, verified wins build speed, and speed gets real work finished.

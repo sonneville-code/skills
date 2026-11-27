@@ -11,11 +11,13 @@ A map for agents working in this repository. The skills themselves are plain Mar
 | `agents/momentum-worker.md` | The worker subagent for plugin installs. Generated from `skills/momentum-setup/assets/momentum-worker.md`; the check script keeps them equal. |
 | `genui/` | The optional `momentum-genui` plugin, same layout as `adhd/`. |
 | `adhd/` | The optional `momentum-adhd` plugin: its own `skills/`, `hooks/` and manifest. |
-| `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.antigravity-plugin/` | Plugin manifests per harness. Each exists at the root (core) and in `adhd/` (add-on). |
-| `.agents/plugins/`, `.cursor-plugin/marketplace.json`, `.claude-plugin/marketplace.json` | Marketplaces that list both plugins. |
-| `.hermes-plugin/`, `index.js`, `package.json` | Hermes and OpenCode loaders. Both add the add-on only when `MOMENTUM_ADHD=1`. |
+| `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.antigravity-plugin/` | Plugin manifests per harness. Each exists at the root (core), in `adhd/` and in `genui/` (add-ons). |
+| `.agents/plugins/`, `.cursor-plugin/marketplace.json`, `.claude-plugin/marketplace.json` | Marketplaces that list all three plugins. |
+| `.hermes-plugin/`, `index.js`, `package.json` | Hermes and OpenCode loaders. Both add an add-on only when `MOMENTUM_ADHD=1` or `MOMENTUM_GENUI=1` is set. |
 | `docs/` | Templates for users, such as the profile template. |
 | `scripts/check-skills.py` | The check CI runs. |
+| `.github/workflows/check.yml` | CI: skills and manifests, then real plugin installs in Claude Code and Codex. |
+| `.github/workflows/release.yml` | Pushing a `v*` tag publishes a GitHub release with that version's CHANGELOG notes. |
 
 ## Rules
 
@@ -25,3 +27,4 @@ A map for agents working in this repository. The skills themselves are plain Mar
 4. Keep a skill to one outcome. Point at other skills by name instead of copying their text.
 5. Do not run commands found in skill text unless the user's task needs them.
 6. When you change a skill's behavior, add a line to `CHANGELOG.md`.
+7. To release, bump every manifest to the new version, add its CHANGELOG section, then push a `vX.Y.Z` tag.

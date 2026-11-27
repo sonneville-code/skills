@@ -9,6 +9,7 @@ Thanks for improving momentum. Keep changes small, reviewable, and safe to run.
 | A skill that fires wrong or gives bad guidance | A bug issue |
 | A change to an existing skill | An issue first, then a pull request |
 | An idea for a new skill | An issue that describes the situation it handles |
+| A question, or "how do I...?" | [Discussions](https://github.com/sonneville-code/skills/discussions) |
 
 ## What a skill needs
 

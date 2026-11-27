@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: GitHub release from CHANGELOG
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the tag matches every manifest version
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          python3 scripts/check-skills.py
+          actual=$(python3 -c "import json; print(json.load(open('.claude-plugin/plugin.json'))['version'])")
+          if [ "$actual" != "$version" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match manifest version $actual"
+            exit 1
+          fi
+      - name: Take this version's notes from CHANGELOG.md
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          awk -v v="$version" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' CHANGELOG.md > notes.md
+          test -s notes.md || { echo "::error::no CHANGELOG section for $version"; exit 1; }
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "$GITHUB_REF_NAME" --title "momentum $GITHUB_REF_NAME" --notes-file notes.md --verify-tag
