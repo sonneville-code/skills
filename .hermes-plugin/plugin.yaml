@@ -1,4 +1,4 @@
 name: momentum
-version: 0.5.1
+version: 0.5.2
 description: Agent skills that keep work moving. Set MOMENTUM_ADHD=1 or MOMENTUM_GENUI=1 to add the optional skills.
 author: sonneville-code

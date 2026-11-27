@@ -1,6 +1,6 @@
 // momentum-setup session-start hook: loads the val-mode skill at the start of a session.
 // Installed by setup.mjs. Usage:
-//   node session-start.mjs --format claude|codex|cursor|agy --skill <path to val-mode/SKILL.md> [--level default|terse]
+//   node session-start.mjs --format claude|codex|cursor|copilot|agy --skill <path to val-mode/SKILL.md> [--level default|terse]
 // Off for one run: MOMENTUM_VAL_MODE=0. Never blocks a session: every failure exits 0 with no output.
 import { readFileSync } from "node:fs";
 
@@ -21,6 +21,8 @@ try {
   const out =
     format === "cursor"
       ? { additional_context: context }
+      : format === "copilot"
+        ? { additionalContext: context }
       : format === "agy"
         ? { injectSteps: [{ ephemeralMessage: context }] }
         : { hookSpecificOutput: { hookEventName: "SessionStart", additionalContext: context } };

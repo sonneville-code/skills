@@ -2,6 +2,12 @@
 
 All notable changes to this project are recorded here. The format follows Keep a Changelog, and versions follow semantic versioning.
 
+## [0.5.2] - 2026-11-28
+
+### Added
+
+- `momentum-setup` supports GitHub Copilot CLI: a `sessionStart` hook file in `~/.copilot/hooks` and the `momentum-worker` agent in `~/.copilot/agents`.
+
 ## [0.5.1] - 2026-11-28
 
 ### Changed

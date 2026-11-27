@@ -10,7 +10,7 @@ disable-model-invocation: true
 
 ## Steps
 
-1. **Name the harness you are running in**: `claude`, `codex`, `cursor`, `agy`, `opencode` or `hermes`. You know which one you are. If you do not, ask.
+1. **Name the harness you are running in**: `claude`, `codex`, `cursor`, `copilot`, `agy`, `opencode` or `hermes`. You know which one you are. If you do not, ask.
 2. **Ask the user three things in one question**, with the first option pre-selected:
    - what to install: hook and agent / agent only / hook only
    - scope: user (every project) / project (this folder only)
@@ -34,6 +34,7 @@ Done when the user has approved the plan, the files hold the new entries, and th
 | claude | `SessionStart` in `settings.json` | `agents/momentum-worker.md` |
 | codex | `SessionStart` in `hooks.json` | `agents/momentum-worker.toml` |
 | cursor | `sessionStart` in `hooks.json` | `agents/momentum-worker.md` |
+| copilot | `hooks/momentum-val-mode.json` (user: `~/.copilot/`, project: `.github/`; project hooks run only in a trusted folder) | `agents/momentum-worker.agent.md` |
 | agy | `SessionStart` group in `hooks.json` (user: `~/.gemini/config/`, project: `.agents/`) | Through the plugin install only |
 | opencode | A plugin file, listed in `opencode.json` | `agents/momentum-worker.md` |
 | hermes | A plugin that adds val-mode to the first turn | None (Hermes has no agent files) |

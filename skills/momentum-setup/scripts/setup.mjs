@@ -4,7 +4,7 @@
 //   node setup.mjs <harness> [--scope user|project] [--only hook,agent] [--level default|terse]
 //                  [--project-dir DIR] [--val-mode PATH] [--dry-run] [--uninstall]
 //
-// harness: claude | codex | cursor | agy | opencode | hermes
+// harness: claude | codex | cursor | copilot | agy | opencode | hermes
 // hook:  a session-start hook that loads the val-mode skill (needs val-mode installed).
 // agent: the momentum-worker subagent definition.
 //
@@ -22,7 +22,7 @@ const SKILL_DIR = path.dirname(HERE);
 const HOOK_SCRIPT = path.join(HERE, "session-start.mjs");
 const ID = "momentum-val-mode";
 const MARK = "managed-by: momentum-setup";
-const HARNESSES = ["claude", "codex", "cursor", "agy", "opencode", "hermes"];
+const HARNESSES = ["claude", "codex", "cursor", "copilot", "agy", "opencode", "hermes"];
 
 const argv = process.argv.slice(2);
 const flag = (name) => argv.includes(`--${name}`);
@@ -154,6 +154,16 @@ const targets = {
       writeJson(file, data, `sessionStart hook ${uninstall ? "removed" : "added"}`);
     }
     if (only.includes("agent")) writeAgent(path.join(base, "agents", "momentum-worker.md"), agentMarkdown());
+  },
+  copilot() {
+    // Copilot CLI reads every JSON file in ~/.copilot/hooks (repo: .github/hooks), so the hook gets a file of its own.
+    const base = scope === "project" ? path.join(projectDir, ".github") : process.env.COPILOT_HOME || path.join(home, ".copilot");
+    if (only.includes("hook")) {
+      const file = path.join(base, "hooks", `${ID}.json`);
+      if (uninstall) remove(file, "sessionStart hook");
+      else writeJson(file, { version: 1, hooks: { sessionStart: [{ type: "command", command: hookCommand("copilot"), timeoutSec: 10 }] } }, "sessionStart hook added");
+    }
+    if (only.includes("agent")) writeAgent(path.join(base, "agents", "momentum-worker.agent.md"), agentMarkdown());
   },
   agy() {
     // agy groups hooks under a name, with flat SessionStart entries. A malformed file disables every agy hook, so it is parsed and rewritten whole.

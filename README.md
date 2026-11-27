@@ -95,6 +95,7 @@ The `skills` CLI copies skill folders and nothing else, so it cannot add hooks o
 | Claude Code | yes | yes |
 | Codex | yes (trust it once on the Hooks screen) | yes |
 | Cursor | yes | yes |
+| GitHub Copilot CLI | yes (project hooks need a trusted folder) | yes |
 | Antigravity | yes | through `agy plugin install` |
 | OpenCode | yes | yes |
 | Hermes | yes | no, Hermes has no agent files |
