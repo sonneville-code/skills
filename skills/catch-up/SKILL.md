@@ -5,9 +5,9 @@ description: Plain-language recap of what changed in this chat since the user la
 
 # Catch-up
 
-The user stepped away, or the work moved faster than they could follow. Give them back the thread in one screen: what changed for them, and what they need to decide.
+The user stepped away, or the work moved faster than they could follow. Show them, on one screen, what changed for them and what they need to decide.
 
-Keep this turn read-only. Start nothing, change nothing, post nothing.
+Keep this turn read-only. Change no files and post nothing.
 
 ## Gather
 
@@ -24,7 +24,7 @@ Keep this turn read-only. Start nothing, change nothing, post nothing.
 
 ## Voice
 
-Plain words, short sentences, no jargon, like one person catching up another. Use the project's own terms from `GLOSSARY.md` when one exists. If the harness renders rich blocks, a small table or picture can replace a paragraph, but never a status board.
+Use plain words and short sentences, the way one person catches up another. Use the project's own terms from `GLOSSARY.md` when one exists. If the harness renders rich blocks, a small table or picture can replace a paragraph, but never a status board.
 
 ## When the user says "wait, what?"
 

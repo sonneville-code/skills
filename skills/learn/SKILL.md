@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Learn
 
-A correction the user gives twice is a missing piece of structure. More text in a rules file is the weakest fix, because nothing fails when an agent skips it.
+When the user gives the same correction twice, the repo is missing a check that would catch the mistake. More text in a rules file is the weakest fix, because nothing fails when an agent skips it.
 
 Routing misses (the wrong skill fired, a skill never fired) go to `routing-tune`. Everything else comes here.
 
@@ -18,7 +18,7 @@ Routing misses (the wrong skill fired, a skill never fired) go to `routing-tune`
 
 ## Fix each class at the strongest level that works
 
-1. **Architecture**: give each piece of state one owner and each task one supported way, so the wrong path does not exist.
+1. **Architecture**: give each piece of state one owner and each task one supported way, so the wrong way to do it does not exist.
 2. **Types or a lint**: the bad version does not compile, or a check fails with a message that names the right way.
 3. **A test** that fails when the behavior breaks.
 4. **Text last**: a skill edit or a rule line, only for judgment calls that no check can catch.

@@ -107,7 +107,7 @@ Manual skills run only when you type their name. The rest fire on their own when
 |---|---|---|
 | Thinking | `rd-method`, `diverge`, `grill` (manual), `shared-language` | Pick an approach with evidence, widen a hard design decision across isolated viewpoints, pressure-test a plan, keep one word per concept in `GLOSSARY.md` |
 | Building | `build`, `tdd`, `debug`, `review`, `verify`, `micro-commits`, `create-verification-skill` (manual), `maintain-verification-skill` (manual) | A default order and a stop rule for each kind of change, test-first work, root-cause debugging, code review in both directions, an evidence gate before "done", small commits, a project-local skill that proves behavior on the real app |
-| Agents and focus | `brief`, `review-window` (manual), `catch-up`, `checkpoint` | Brief agents so they finish without questions, check on all of them at once, get a plain recap of what changed, pause and resume without losing the thread |
+| Agents and focus | `brief`, `review-window` (manual), `catch-up`, `checkpoint` | Brief agents so they finish without questions, check on all of them at once, get a plain recap of what changed, pause and resume without redoing work |
 | Writing | `unslop` | Cut AI tells from docs, commits, PR text and messages |
 | Housekeeping | `archive-audit`, `learn` (manual), `routing-tune` (manual), `momentum-setup` (manual), `momentum` (manual router) | A wrap-up audit, turn repeated corrections into checks, fix skills that fire wrong, add hooks and the worker agent after `npx skills`, and a router that names the right skill |
 

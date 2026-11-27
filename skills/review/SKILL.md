@@ -9,11 +9,11 @@ description: Code review in both directions. Give one (the diff since a fixed po
 
 1. **Pin the fixed point**: a commit, branch, tag or `main`. If the user named none, ask. Check it resolves (`git rev-parse`) and that `git diff <point>...HEAD` is not empty before going further.
 2. **Find the spec**: issue references in the commit messages, a path the user gave, or the request in this chat. No spec found: say so and review standards only.
-3. **Review two axes separately.** If you can run subagents, give each axis its own fresh one so they do not color each other:
+3. **Review two axes separately.** If you can run subagents, give each axis its own fresh one, so the findings of one review do not influence the other:
    - **Standards**: does the change follow this repo's written rules (`AGENTS.md`, `CONTRIBUTING.md`, lint config, `GLOSSARY.md` terms)?
    - **Spec**: does it do what the spec asked, all of it and nothing more?
-4. **Check what it could break elsewhere.** Listing callers is not enough. Find the one or two facts the change's safety rests on, and prove each as far down this ladder as is cheap, then say where you stopped:
-   1. you said so (worth nothing alone)
+4. **Check what it could break elsewhere.** Listing callers is not enough. Find the one or two facts the change's safety depends on, and prove each as far down this ladder as is cheap, then say where you stopped:
+   1. you said so, which proves nothing alone
    2. you pointed at the line (`file:line`)
    3. you walked the failure case and showed it cannot happen
    4. you ran a script or test against the real code
@@ -36,7 +36,7 @@ Done when both axes are covered, each finding has a location, a fix and a proof 
 1. **Read all of it** before changing anything.
 2. **Restate each item** as a technical requirement. If any item is unclear, ask about the unclear ones before changing anything, because items often depend on each other.
 3. **Check each against the code.** Is it true here? Does it break something else? Was the current design chosen on purpose?
-4. **Answer with substance.** Agree by doing the work, or push back with the technical reason. No "great point" or "you're absolutely right".
+4. **Reply with the technical answer.** Agree by doing the work, or push back with the technical reason. No "great point" or "you're absolutely right".
 5. **Change one item at a time**, and test each before the next.
 
 Done when every item is fixed and tested, answered with a reason, or waiting on a clarifying question.

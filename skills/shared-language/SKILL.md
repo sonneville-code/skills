@@ -5,13 +5,13 @@ description: Build and keep the project's shared vocabulary in GLOSSARY.md, and 
 
 # Shared language
 
-One agreed word replaces a sentence in every later chat, prompt and code name. Agents read faster, name things the same way, and spend fewer tokens explaining.
+One agreed word replaces a sentence in every later chat and code name. Agents then name new code with the same words and need fewer words to explain it.
 
 ## During design talk
 
 - **Challenge conflicts.** When a word clashes with `GLOSSARY.md`, say so at once: "The glossary defines cancellation as X. You seem to mean Y. Which one?"
 - **Sharpen fuzzy words.** Propose one precise term for a vague or overloaded one: "Do you mean the Customer or the User? They differ."
-- **Test with scenarios.** Invent concrete edge cases that force the boundary between two terms into the open.
+- **Test with scenarios.** Invent concrete edge cases that show where one term ends and the other begins.
 - **Check the code.** When the user says how something works, check the code agrees, and point out a mismatch.
 - **Write terms down as they settle**, not in a batch at the end.
 
